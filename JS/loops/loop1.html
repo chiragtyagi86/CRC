@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>To print the table of any number</h1>
+        <input type="number" name="" id="num">
+        <button type="submit" onclick="handleClick()">Submit</button>
+        <hr>
+        <div style="border: solid;" class="table">
+            <h1 id="res"></h1>
+        </div>
+    </center>
+    <script>
+        function handleClick() {
+            let Num = document.querySelector("#num").value;
+            let res = document.querySelector("#res");
+
+            let ans = ''
+
+            for( i=1 ; i<=10 ; i++) {
+                ans += (Num + "X" + i + "=" + Num*i + `<br>` );
+            }
+            res.innerHTML = ans ;
+        }
+    </script>
+</body>
+</html>

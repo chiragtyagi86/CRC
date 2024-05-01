@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>to print wether the number is positive or not</h1>
+        <input type="number" name="" id="num">
+        <button onclick="handlClick()" type="submit">Submit</button>
+        <hr>
+        <h1 id="res"></h1>
+    </center>
+    <script>
+        function handlClick() {
+            let Num1 = document.querySelector("#num").value;
+            let res = document.querySelector("#res");
+
+            if(Num1 > 0){
+                res.innerHTML =  Num1 + " is positive"
+            }
+            else if(Num1 < 0){
+                res.innerHTML = Num1 + " is negitive"
+            }
+            else{
+                res.innerHTML = "it is Zero"
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Find the greatest number between 3 number</h1>
+        <input type="number" id="num1">
+        <input type="number" id="num2">
+        <input type="number" id="num3">
+        <button onclick="handleClick()" type="submit">Submit</button>
+        <hr>
+        <h1 id="res"></h1>
+    </center>
+    <script>
+        function handleClick(){
+            let Num1 = document.querySelector("#num1").value;
+            let Num2 = document.querySelector("#num2").value;
+            let Num3 = document.querySelector("#num3").value;
+            let res = document.querySelector("#res");
+
+            if(Num1 >= Num2 && Num1 >= Num3){
+                res.innerHTML = Num1 + " is the greatest";
+            }
+            else if(Num2 >= Num1 && Num2 >= Num3){
+                res.innerHTML = Num2 + " is the greatest";
+            }
+            else{
+                res.innerHTML = Num3 + " is the greatest";
+            }
+
+        }
+    </script>
+</body>
+</html>

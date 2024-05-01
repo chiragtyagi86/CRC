@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <center>
+      <h1>TO print the sum and multiplication of the given number</h1>
+      <input type="number" name="" id="num" />
+      <button type="submit" onclick="handleClick()">Submit</button>
+      <hr />
+      <h1 id="res"></h1>
+      <h1 id="res2"></h1>
+    </center>
+    <script>
+      function handleClick() {
+        let Num1 = document.querySelector("#num").value;
+        let Res1 = document.querySelector("#res");
+        let Res2 = document.querySelector("#res2");
+        let sum = 0;
+        let mul = 1;
+        const numStr = Num1.toString();
+        for (let i = 0; i < numStr.length; i++) {
+          sum += parseInt(numStr[i]);
+          mul *= parseInt(numStr[i]);
+        }
+        Res1.innerHTML = "Some of Digit is = " + sum ;
+        Res2.innerHTML = "Multiply of digit is = " + mul ;
+      }
+    </script>
+  </body>
+</html>

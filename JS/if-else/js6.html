@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Print the name of day</h1>
+        <input type="number" name="" id="num">
+        <button type="submit" onclick="handleClick()">Submit</button>
+        <hr>
+        <h1 id="res"></h1>
+    </center>
+    <script>
+        function handleClick() {
+            let Num = document.querySelector("#num").value;
+            let res = document.querySelector("#res");
+
+            if(Num == 1){
+                res.innerHTML = "Sunday"
+            }
+            else if(Num == 2){
+                res.innerHTML = "Monday"
+            }
+            else if(Num == 3){
+                res.innerHTML = "Tuesday"
+            }
+            else if(Num == 4){
+                res.innerHTML = "Wednesday"
+            }
+            else if(Num == 5){
+                res.innerHTML = "Thrusday"
+            }
+            else if(Num == 6){
+                res.innerHTML = "Friday"
+            }
+            else if(Num == 7){
+                res.innerHTML = "Saturday"
+            }
+            else {
+                res.innerHTML = "Wow we have only 7 days bro"
+            }
+        }
+    </script>
+</body>
+</html>

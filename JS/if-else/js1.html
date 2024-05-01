@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+
+        <h1>Prog 1: To find the number and even </h1>
+
+        <input type="text" id="number">
+            <button onclick="handleClick()" type="submit">SUBMIT</button>
+
+            <hr>
+            <h1 id="res"></h1>
+    </center>
+
+
+</body>
+<script>
+    function handleClick() {
+        let num = document.querySelector("#number").value;
+        let res = document.querySelector("#res")
+        if(num % 2 == 0){
+            res.innerHTML =  num + " is Even"
+        }
+        else{
+            res.innerHTML = num + " is odd"
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>To Find the triangle behavior </h1>
+        <input type="number" id="side1">
+        <input type="number" id="side2">
+        <input type="number" id="side3">
+        <button onclick="handleClick()" type="submit">Submit</button>
+        <hr>
+        <h1 id="res"></h1>
+    </center>
+    <script>
+        function handleClick() {
+            let Side1 = document.querySelector("#side1").value;
+            let Side2 = document.querySelector("#side2").value;
+            let Side3 = document.querySelector("#side3").value;
+            let res = document.querySelector("#res");
+
+            if(Side1 == Side2  && Side1 == Side3){
+                res.innerHTML = "It is a Equilateral Triangle";
+            }
+        else if(Side1 == Side2 || Side2 == Side3 || Side1 == Side3){
+                res.innerHTML = " It is an issocalese Trmahle"
+        }
+        else{
+            res.innerHTML = "Scaleane Triangle";
+        }
+        }
+    </script>
+</body>
+</html>

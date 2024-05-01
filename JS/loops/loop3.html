@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Reverse the number</h1>
+        <input type="number" name="" id="num">
+        <button type="submit" onclick="handleClick()">Submit with js Inbuild function</button>
+        <button type="submit" onclick="handleClick2()">Submit with normal method</button>
+
+        <hr>
+        <h1 id="res"></h1>
+    </center>
+    <script>
+        function handleClick() {
+            let Num = document.querySelector("#num").value;
+            let res = document.querySelector("#res");
+            const numStr = Num.toString().split('').reverse().join('');
+
+            let reverse = parseInt(numStr);
+            res.innerHTML = reverse;    
+
+        }
+        function handleClick2() {
+            let Num = document.querySelector("#num").value;
+            let res = document.querySelector("#res");
+            let reverse = 0;
+            while(Num > 0){
+                let rem = Num % 10;
+                reverse = reverse * 10 + rem;
+                Num = parseInt(Num / 10);
+            }
+            res.innerHTML = reverse;
+        }
+    </script>
+</body>
+</html>

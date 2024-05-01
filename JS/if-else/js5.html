@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Assending Dessending</h1>
+        <input type="number" name="" id="num1">
+        <input type="number" name="" id="num2">
+        <input type="number" name="" id="num3">
+        <button type="submit" onclick="handleClick()">Submit</button>
+        <hr>
+        <h1 id="res"></h1>
+    </center>
+    <script>
+        function handleClick() {
+            let Num1 = document.querySelector("#num1").value;
+            let Num2 = document.querySelector("#num2").value;
+            let Num3 = document.querySelector("#num3").value;
+            let Res  = document.querySelector("#res");
+
+            if(Num1 > Num2 && Num2 > Num3 && Num1 > Num3){
+                Res.innerHTML =  "It is in dessending order"
+            }
+            else if(Num1  < Num2 && Num2 < Num3 && Num3 > Num1){
+                Res.innerHTML = " It is  in asseending order"
+            }
+            else{
+                Res.innerHTML = "It is Random Number"
+            }
+        }
+    </script>
+</body>
+</html>
