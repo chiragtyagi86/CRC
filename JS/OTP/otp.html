@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center>
+        <h1>Generate Otp</h1>
+        <button type="submit" onclick="handleSubmit()">Generate Otp</button>
+
+        <h1 id="otp" style="border: solid; padding: 6px;"></h1>
+
+    </center>
+    <script>
+        function handleSubmit() {
+            let otp = Math.floor(98978 + Math.random() * 863862);
+            document.querySelector("#otp").innerHTML = otp;
+        }
+    </script>
+</body>
+</html>
