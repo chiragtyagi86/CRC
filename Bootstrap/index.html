@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script> -->
+    <style>
+      * {
+        font-family: cursive;
+        margin: auto;
+        padding: 2px;
+        background: linear-gradient(90deg, #0dcaf0 10%, #0d6efd, 90%);
+        /* background: linear-gradient(); */
+      }
+      .container {
+        /* display: flex; */
+        box-sizing: border-box;
+      }
+      #gif{
+        /* background-image: url("dice-roll-dice.gif"); */
+        width: 450px;
+        height: 264px;
+        background-image: url("dicewhite.jpeg");
+        background-repeat: no-repeat;
+        background-position: left;
+        margin-left: 75px;
+        scale: 1.3;
+    
+      }
+      #gif:hover{
+        background-image: url("dice-roll-dice.gif");
+      }
+    </style>
+      <!-- <link rel="icon"href="C:\Users\aappl\.vscode\CRCtrain\Games\favicon_io\favicon.ico"/> -->
+      <link rel="apple-touch-icon" sizes="180x180" href="C:\Users\aappl\.vscode\CRCtrain\Games\favicon_io\apple-touch-icon.png">
+      <link rel="icon" type="image/png" sizes="32x32" href="C:\Users\aappl\.vscode\CRCtrain\Games\favicon_io\favicon-32x32.png">
+      <link rel="icon" type="image/png" sizes="16x16" href="C:\Users\aappl\.vscode\CRCtrain\Games\favicon_io\favicon-16x16.png">
+      <link rel="manifest" href="C:\Users\aappl\.vscode\CRCtrain\Games\favicon_io\site.webmanifest">
+  </head>
+  <body>
+    <div>
+      <center><h1 class="container">Welcome to my Game Webpage</h1></center>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img id="rand" onmouseleave="gif2()" onmouseover="handlMouse()" src="dice.jpeg"class="card-img-top"alt="..."height="250px"/>
+            <div class="card-body">
+              <h5 class="card-title">Dice</h5>
+              <p class="card-text">..</p>
+              <a href="#" class="btn btn-primary">Play dice Game</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img src="otp.png" class="card-img-top" alt="..." height="250px" />
+            <div class="card-body">
+              <h5 class="card-title">OTP Game</h5>
+              <p class="card-text">Play Otp Game</p>
+              <a href="#" class="btn btn-primary">Play</a>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem">
+            <img src="mainimg.jpeg" class="card-img-top" alt="..." height="250px" />
+            <div class="card-body">
+              <h5 class="card-title">Rock Paper Scissor</h5>
+              <p class="card-text">Play Rps</p>
+              <a href="#id3" class="btn btn-primary">Play RPS</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br/><br/>
+    <section class="container" id="id1">
+      <div id="gif"></div>
+      <!-- <img src="dice-roll-dice.gif" alt="" id="gif"> -->
+      <button onclick="dice()">Roll Dice</button>
+      <h1><div class="fs-1" id="i1"></div></h1>
+    </section>
+    <section class="container" id="id2"></section>
+
+    <section class="container" id="id3">
+      <h1 class="container">
+        <center>Click On Image to choose Between Rock paper and Scissor</center>
+      </h1>
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <button onclick="rps(1)">
+                <img src="rock.png" class="card-img-top" alt="..." height="250px"/>
+              </button>
+              <div class="card-body">
+                <!-- <h5 class="card-title">Dice</h5>
+               <p class="card-text">..</p>
+               <a href="" class="btn btn-primary">Play dice Game</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <button onclick="rps(2)">
+                <img src="paper.png" class="card-img-top" alt="..." height="250px"/>
+              </button>
+              <div class="card-body">
+                <!-- <h5 class="card-title"></h5>
+               <p class="card-text">Play Otp Game</p>
+               <a href="otp.html" class="btn btn-primary">Play</a> -->
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="card" style="width: 18rem">
+              <button onclick="rps(3)">
+                <img src="scissor.png" class="card-img-top" alt="..." height="250px"/>
+              </button>
+              <div class="card-body">
+                <!-- <h1 id=""></h1> -->
+                <!-- <h5 class="card-title">Rock Paper Scissor</h5>
+               <p class="card-text">Play Rps</p>
+               <a href="Rps.html" class="btn btn-primary">Play RPS</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="container">
+        <h2 id="i2"></h2>
+        <h2>
+          User=
+          <h2 id="i3"></h2>
+        </h2>
+        <h2>
+          Computer=
+          <h2 id="i4"></h2>
+        </h2>
+      </h1>
+      <button onclick="reset()">Reset Score</button>
+    </section>
+    <script>
+        let user = 0;
+        let computer = 0;
+        function dice() {
+          let rol = Math.floor(Math.random() * 6 + 1);
+          document.getElementById("i1").innerHTML = rol;
+        }
+        function rps(x) {
+          let y = Math.floor(Math.random() * 3 + 1);
+          if ((x == 1 && y == 3) || (x == 2 && y == 1) || (x == 3 && y == 2)) {
+            document.getElementById("i2").innerHTML = "USER WIN";
+            user = user + 1;
+            computer = computer + 0;
+            document.getElementById("i3").innerHTML = user;
+            document.getElementById("i4").innerHTML = computer;
+          }
+          else if ((x == 1 && y == 2) || (x == 2 && y == 3) || (x == 3 && y == 1)) {
+            document.getElementById("i2").innerHTML = "Computer wins";
+            computer = computer + 1;
+            user = user + 0;
+            document.getElementById("i3").innerHTML = user;
+            document.getElementById("i4").innerHTML = computer;
+          } 
+          else {
+            document.getElementById("i2").innerHTML = "TIE";
+            document.getElementById("i3").innerHTML = user;
+            document.getElementById("i4").innerHTML = computer;
+          }
+      }
+      function reset() {
+        user = 0;
+        computer = 0;
+        document.getElementById("i3").innerHTML = user;
+        document.getElementById("i4").innerHTML = computer;
+      }
+      function handlMouse() {
+        let Ramdi = document.querySelector("#rand");
+        Ramdi.setAttribute('src',"dice-roll-dice.gif");        
+      }
+      function gif2(){
+        let gif3= document.getElementById("rand");
+      }
+
+    </script>
+  </body>
+</html>

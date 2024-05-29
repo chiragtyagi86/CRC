@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15%;
+    }
+    .main{
+        display: grid;
+        width: 25%;
+        grid-template-columns: auto auto auto;
+    }
+    .container{
+        border: solid;
+
+        padding: 50px;
+
+    }
+</style>
+<body>
+    <main>
+
+    <div class="main">
+
+        <div id="cell1" class="container" onclick="handleClick(0)" ></div>
+        <div id="cell2" class="container" onclick="handleClick(1)"></div>
+        <div id="cell3" class="container" onclick="handleClick(2)"></div>
+        <div id="cell4" class="container" onclick="handleClick(3)"></div>
+        <div id="cell5" class="container" onclick="handleClick(4)"></div>
+        <div id="cell6" class="container" onclick="handleClick(5)"></div>
+        <div id="cell7" class="container" onclick="handleClick(6)"></div>
+        <div id="cell8" class="container" onclick="handleClick(7)"></div>
+        <div id="cell9" class="container" onclick="handleClick(8)"></div>
+
+    </div>
+    
+    </main>
+    <script>
+        let currentPlayer = 'X';
+        let board = ['', '', '', '', '', '', '', '', ''];
+
+        function handleClick(index) {
+            if (board[index] === '') {
+                board[index] = currentPlayer;
+                document.getElementsByClassName('container')[index].innerText = currentPlayer;
+                if (checkWinner(currentPlayer)) {
+                    alert(currentPlayer + ' wins!');
+                    resetBoard();
+                } else if (board.every(cell => cell !== '')) {
+                    alert('It\'s a draw!');
+                    resetBoard();
+                } else {
+                    currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+                }
+            }
+        }
+
+        function checkWinner(player) {
+            const winningCombinations = [
+                [0, 1, 2],
+                [3, 4, 5],
+                [6, 7, 8],
+                [0, 3, 6],
+                [1, 4, 7],
+                [2, 5, 8],
+                [0, 4, 8],
+                [2, 4, 6]
+            ];
+            return winningCombinations.some(combination =>
+                combination.every(index => board[index] === player)
+            );
+        }
+
+        function resetBoard() {
+            currentPlayer = 'X';
+            board = ['', '', '', '', '', '', '', '', ''];
+            const containers = document.getElementsByClassName('container');
+            for (let i = 0; i < containers.length; i++) {
+                containers[i].innerText = '';
+            }
+        }
+    </script>
+</body>
+</html>

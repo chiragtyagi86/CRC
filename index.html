@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stone Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.container {
+    text-align: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.choices {
+    margin: 20px 0;
+}
+
+.choice {
+    margin: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.choice:hover {
+    background-color: #e0e0e0;
+}
+
+.win {
+    background: green;
+    color: white;
+    font-weight: bold;
+}
+
+.lose {
+    background: red;
+    font-weight: bold;
+    color: white;
+}
+.esult{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 20px;
+}
+
+</style>
+<body>
+    <div class="container">
+        <h1>Stone Paper Scissors</h1>
+        <div class="choices">
+            <button class="choice" id="stone">Stone</button>
+            <button class="choice" id="paper">Paper</button>
+            <button class="choice" id="scissors">Scissors</button>
+        </div>
+        <div class="result">
+            <p id="player-choice"></p>
+            <p id="computer-choice"></p>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const choices = ['Stone', 'Paper', 'Scissors'];
+    const choiceButtons = document.querySelectorAll('.choice');
+    const playerChoiceElement = document.getElementById('player-choice');
+    const computerChoiceElement = document.getElementById('computer-choice');
+    const resultElement = document.getElementById('result');
+
+    choiceButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const playerChoice = button.id.charAt(0).toUpperCase() + button.id.slice(1);
+            const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+            const result = determineWinner(playerChoice, computerChoice);
+
+            displayChoices(playerChoice, computerChoice);
+            displayResult(result, playerChoice, computerChoice);
+        });
+    });
+
+    function determineWinner(player, computer) {
+        if (player === computer) {
+            return 'draw';
+        } else if (
+            (player === 'Stone' && computer === 'Scissors') ||
+            (player === 'Paper' && computer === 'Stone') ||
+            (player === 'Scissors' && computer === 'Paper')
+        ) {
+            return 'win';
+        } else {
+            return 'lose';
+        }
+    }
+
+    function displayChoices(player, computer) {
+        playerChoiceElement.textContent = `Player: ${player}`;
+        computerChoiceElement.textContent = `Computer: ${computer}`;
+        playerChoiceElement.className = '';
+        computerChoiceElement.className = '';
+
+        choiceButtons.forEach(button => {
+            button.classList.remove('win', 'lose');
+        });
+    }
+
+    function displayResult(result, player, computer) {
+        const playerButton = document.getElementById(player.toLowerCase());
+        const computerButton = document.getElementById(computer.toLowerCase());
+
+        if (result === 'win') {
+            playerChoiceElement.classList.add('win');
+            computerChoiceElement.classList.add('lose');
+            playerButton.classList.add('win');
+            computerButton.classList.add('lose');
+            resultElement.textContent = 'You Win!';
+        } else if (result === 'lose') {
+            playerChoiceElement.classList.add('lose');
+            computerChoiceElement.classList.add('win');
+            playerButton.classList.add('lose');
+            computerButton.classList.add('win');
+            resultElement.textContent = 'You Lose!';
+        } else {
+            resultElement.textContent = 'It\'s a Draw!';
+        }
+    }
+});
+
+</script>
+</html>
