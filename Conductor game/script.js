@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const result = document.getElementById("result");
   const startBtn = document.getElementById("startBtn");
   const fireworksContainer = document.getElementById("fireworks");
+  const winSound = document.getElementById("winSound");
+  const loseSound = document.getElementById("loseSound");
 
   let playerSeat = null;
   let checkCount = 0;
@@ -59,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function moveBot() {
     interval = setInterval(() => {
       checkCount++;
-      const botPositions = getRandomPositions(8, 40);
+      const botPositions = getRandomPositions(19, 40);
       updateBot(botPositions);
       if (checkCaught(botPositions)) {
         endGame("lose");
@@ -99,8 +101,10 @@ document.addEventListener("DOMContentLoaded", () => {
       result.textContent = "You escaped!";
       result.style.color = "green";
       triggerFireworks();
+      winSound.play();
     } else {
       result.textContent = "You got caught!";
+      loseSound.play();
     }
     startBtn.disabled = false;
   }

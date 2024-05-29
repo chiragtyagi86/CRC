@@ -119,7 +119,7 @@ body {
     position: absolute;
     background: transparent;
     border-radius: 50%;
-    animation: firework-animation 1s linear infinite;
+    animation: firework-animation 4s linear infinite;
 }
 
 @keyframes firework-animation {
